@@ -34,7 +34,6 @@ public class FootballService {
 
     public void insertCountryData(Country[] cdas) {
         for (Country country : cdas) {
-
             footballMapper.insertCountries(country);
         }
     }

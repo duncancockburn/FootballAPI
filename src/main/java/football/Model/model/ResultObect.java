@@ -8,6 +8,8 @@ public class ResultObect {
         String match_awayteam_name;
         String match_awayteam_score;
 
+
+
     @Override
     public String toString() {
         return "ResultObect{" +

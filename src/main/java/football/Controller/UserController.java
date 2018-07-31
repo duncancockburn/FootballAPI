@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
+
 @RestController
 
 @RequestMapping("/footballusers")
@@ -27,11 +28,18 @@ public class UserController {
     public ArrayList<User> getUsers() {
         return userService.getAllUsers();
     }
+
+
     //Create
-    @PostMapping("/userCreate")
-    public User addNew(@RequestBody User user) {
-        return userService.addNew(user);
+    @PostMapping("/user")
+    public User createUser (@RequestBody User user){
+        User newuser = userService.addNew(user);
+        return newuser;
     }
+
+
+
+
 
     //Update
     @PatchMapping("/")

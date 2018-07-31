@@ -9,22 +9,11 @@ public class User {
     String apiKey;
 
     public String getApiKey() {
-
         return apiKey;
     }
 
     public void setApiKey(String apiKey) {
         this.apiKey = apiKey;
-    }
-
-    public User(int id, String first_name, String last_name, int isActive) {
-        this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.isActive = isActive;
-    }
-
-    public User() {
     }
 
     public int getId() {

@@ -23,7 +23,6 @@ public class UserService {
 
     @Autowired
     RestTemplate restTemplate;
-    private ResultSet resultSet = null;
 
 
     //get all users using com
@@ -44,6 +43,8 @@ public class UserService {
     }
 
 
+
+
     //add new user
     public User addNew(User user) {
         String key = null;
@@ -54,17 +55,23 @@ public class UserService {
             e.printStackTrace();
         }
 
-        userMapper.insertUser(user, key);
-        return userMapper.getByName(user.getFirst_name());
-    }
-
-
+        //check for duplicate key
+        while(authService.security(key) == true){
+            try {
+                user.setApiKey(authService.createApiKey());
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+        }
+        userMapper.insertUser(user);
+        return userMapper.getByAPIKey(user.getApiKey());
+}
 
 
     //update user by its id
     public User updateById(User user) {
         userMapper.updateUser(user);
-        return userMapper.getByName(user.getFirst_name());
+        return userMapper.getByAPIKey(user.getApiKey());
     }
 
     //delete

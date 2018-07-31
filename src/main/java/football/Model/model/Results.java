@@ -18,6 +18,24 @@ public class Results {
     String match_awayteam_halftime_score;
     String match_live;
 
+    public Results(int idheadtohead, String match_id, String country_id, String country_name, String league_id, String league_name, String match_date, String match_status, String match_time, String match_hometeam_name, String match_hometeam_score, String match_awayteam_name, String match_awayteam_score, String match_hometeam_halftime_score, String match_awayteam_halftime_score, String match_live) {
+        this.idheadtohead = idheadtohead;
+        this.match_id = match_id;
+        this.country_id = country_id;
+        this.country_name = country_name;
+        this.league_id = league_id;
+        this.league_name = league_name;
+        this.match_date = match_date;
+        this.match_status = match_status;
+        this.match_time = match_time;
+        this.match_hometeam_name = match_hometeam_name;
+        this.match_hometeam_score = match_hometeam_score;
+        this.match_awayteam_name = match_awayteam_name;
+        this.match_awayteam_score = match_awayteam_score;
+        this.match_hometeam_halftime_score = match_hometeam_halftime_score;
+        this.match_awayteam_halftime_score = match_awayteam_halftime_score;
+        this.match_live = match_live;
+    }
 
     public int getIdheadtohead() {
         return idheadtohead;

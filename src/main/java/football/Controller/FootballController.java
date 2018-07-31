@@ -8,8 +8,6 @@ import football.Service.LiveScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-
 @RestController
 
 @RequestMapping("/football")
@@ -36,9 +34,10 @@ public class FootballController {
     public FutbolRoot firstTeam_lastResults(
         @RequestParam("keyword1") String keyword1,
         @RequestParam("keyword2") String keyword2,
+        @RequestParam("apiKey") String apiKey,
         @RequestParam("persist") String persist) {
 
-        FutbolRoot object = liveScoreService.firstTeam_lastResults(keyword1, keyword2, "true");
+        FutbolRoot object = liveScoreService.firstTeam_lastResults(keyword1, keyword2, apiKey, "true");
         return object;
     }
 
@@ -64,7 +63,8 @@ public class FootballController {
 
     //Delete
     @DeleteMapping("/")
-    public Results deleteByMatchID(@RequestParam(value="match_id")String match_id){
+    public String deleteByMatchID(@RequestParam(value="match_id")String match_id){
+        liveScoreService.clearCache();
         return liveScoreService.deleteByScore(match_id);
     }
 }

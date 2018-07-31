@@ -1,14 +1,14 @@
-package football.exceptions;
-
-//import com.springrest.model.CustomResponseObject;
+//package football.exceptions;
+//
+//
 //import org.springframework.web.bind.annotation.ControllerAdvice;
 //import org.springframework.web.bind.annotation.ExceptionHandler;
 //import org.springframework.web.bind.annotation.ResponseBody;
 //
 //@ControllerAdvice
 //public class GlobalExceptionHandler {
+//    public static final String DEFAULT_ERROR_VIEW = "error";
 //
-//    @ResponseBody
 //    @ExceptionHandler(InvalidRequestException.class)
 //    public CustomResponseObject APINotFoundExceptionHandler (InvalidRequestException ae){
 //        CustomResponseObject response = new CustomResponseObject();
